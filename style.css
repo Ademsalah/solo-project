@@ -1,30 +1,34 @@
-.cours{
-    padding: 0px 0px;
-    border: 3px black solid;
-    height: 400px;
-    width: 400px;
-    border-radius:10px ;
+.cours {
+  padding: 0px 0px;
+  border: 3px black solid;
+  height: 400px;
+  width: 400px;
+  border-radius: 10px;
 }
-img{
-    border-radius:8px ;
-    width: 400px;
-    height: 350px;
+img {
+  border-radius: 8px;
+  width: 400px;
+  height: 350px;
 }
-.container{
-    display: grid;
+.container {
+  display: grid;
   gap: 50px;
   grid-template-columns: auto auto auto;
   padding: 10px;
 }
-body{
-  background-image: url("photos/e-learning.jpg");
+body {
+  background-image: url("https://assets.entrepreneur.com/content/3x2/2000/20190724133745-shutterstock-579867070.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 .sidenav {
   height: 100%;
   width: 0;
   position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   z-index: 1;
   top: 0;
   left: 0;
@@ -32,9 +36,11 @@ body{
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
-  text-align:center;
+  text-align: center;
 }
-
+.sidenav input {
+  width: 60%;
+}
 .sidenav a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
@@ -42,10 +48,9 @@ body{
   color: #818181;
   display: block;
   transition: 0.3s;
-
 }
 
-.sidenav a:hover{
+.sidenav a:hover {
   color: #f1f1f1;
 }
 
@@ -56,15 +61,37 @@ body{
   font-size: 36px;
   margin-left: 50px;
 }
-
+.add {
+  padding: 6px 20px;
+  color: #a6adbf;
+  border-radius: 15px;
+  margin-top: 20px;
+  background-color: #f1f1f1;
+}
+.add:hover {
+  background-color: #dddcdc;
+  color: #6b7180;
+}
+.toggler {
+  margin: 10px;
+  color: #f1f1f1;
+}
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
 }
 
 @media screen and (max-height: 450px) {
-  .header__cta btn btn--secondary {padding-top: 15px;}
-  .header__cta btn btn--secondary a {font-size: 18px;}
+  .header__cta btn btn--secondary {
+    padding-top: 15px;
+  }
+  .header__cta btn btn--secondary a {
+    font-size: 18px;
+  }
 }
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap");
@@ -116,7 +143,6 @@ html {
 body {
   min-height: 100dvh;
   font: normal var(--font-size-body) / 1.5 var(--font-base);
-  /* Hides the navigation drawer with visibility: hidden and translateX: 100% */
   overflow-x: hidden;
 }
 
@@ -152,7 +178,6 @@ button {
 }
 
 .container {
-  /* max-width: 1200px */
   width: min(90%, 75em);
   margin-inline: auto;
 }
@@ -231,7 +256,6 @@ button {
   text-align: center;
 }
 
-
 .header__burger {
   --_height: 4px;
   --_width: 2em;
@@ -264,7 +288,6 @@ button {
 }
 
 .header__nav {
-  /* Absolutely positioned relatively to its closest positioned ancestor (container) */
   position: absolute;
   top: 100%;
   right: 0;
@@ -272,14 +295,9 @@ button {
   width: 100%;
   background-color: var(--color-primary-dark);
 
-  /* Use visibility: hidden both prevents interacting with the navigation and allows using transitions (display: none cannot be animated) */
   visibility: hidden;
-  /* Moves the navigation out of the screen for a "drawer" animation when the menu is opened */
-  /* To prevent undesirable horizontal scrollbar, overflow-x: hidden must be set to the closest fixed parent (body since does not work on container...) */
   transform: translateX(100%);
-  /* Opacity is used here to add a fade-out effect (fade-in also exists but not visible due to a fast transition) */
   opacity: 0;
-  /* Transition (occurs on close because overrident by another transition set to the .visible class) */
   transition: visibility 1.5s 150ms ease, opacity 1.5s 150ms ease,
     transform 1.5s ease;
 
@@ -287,7 +305,6 @@ button {
     visibility: visible;
     opacity: 1;
     transform: translateX(0);
-    /* Overrides the transition property set on the navigation, which allow to create different effects on opening/closing the menu */
     transition: transform 500ms ease;
   }
 }
@@ -308,7 +325,6 @@ button {
 }
 
 .header__menu-toggle {
-  /* Asbolutely positioned relatively to its closest positioned ancestor (header) */
   position: absolute;
   top: 50%;
   right: 5%;
@@ -368,5 +384,3 @@ button {
     margin-left: auto;
   }
 }
-
-
